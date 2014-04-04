@@ -1,0 +1,58 @@
+/* IE6 css fixer v0.95: Fri, 06 Sep 2013 20:34:14 +0200 */
+
+/* ============================================= */
+/* safe settings                                 */
+
+/* add display:inline to floated elements */
+*:first-child+html #logo,
+*:first-child+html .navbar,
+*:first-child+html #about1,
+*:first-child+html #about2,
+*:first-child+html #prev,
+*:first-child+html #next {display:inline;}
+
+/* convert min height values */
+*:first-child+html .page-container {height:100%;}
+
+
+/* fix negative margins */
+*:first-child+html .name,
+*:first-child+html .titleEmail {position:relative; zoom:1;}
+
+/* add zoom:1 to overflow:hidden */
+*:first-child+html .name,
+*:first-child+html .titleEmail {zoom:1;}
+
+/* add overflow:visible to (submit) buttons */
+ *:first-child+html input[type="submit"], *:first-child+html button {overflow:visible;}
+
+
+/* ============================================= */
+/* potentially harmful settings                  */
+
+/* add zoom:1 to backgrounds -- Manually check for problems with inline elements! */
+*:first-child+html #logo,
+*:first-child+html .navbar-item:hover,
+*:first-child+html .navbar-item:active,
+*:first-child+html .navbar-bg1,
+*:first-child+html .navbar-bg2,
+*:first-child+html .navbar-bg3,
+*:first-child+html .bg1,
+*:first-child+html .bg2,
+*:first-child+html .bg3,
+*:first-child+html .description,
+*:first-child+html .bgservice,
+*:first-child+html .bookingButton,
+*:first-child+html .bookingButton2,
+*:first-child+html .bookingButton3,
+*:first-child+html .bookingButton32,
+*:first-child+html .bookingButton32:hover,
+*:first-child+html .bookingButton32:active,
+*:first-child+html .button,
+*:first-child+html input[type=button],
+*:first-child+html select {zoom:1;}
+
+/* PNG fix */
+*:first-child+html .navbar-bg1,
+*:first-child+html .bookingButton,
+*:first-child+html .bookingButton3{behavior: expression((this.runtimeStyle.behavior = "none") && (this.currentStyle.backgroundImage.toString().toLowerCase().indexOf('.png')>-1) && (this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.currentStyle.backgroundImage.toString().replace('url("','').replace('")','') + "', sizingMethod='crop')", this.runtimeStyle.zoom = 1, this.runtimeStyle.backgroundImage = "none"));}
